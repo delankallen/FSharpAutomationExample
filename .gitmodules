@@ -1,0 +1,3 @@
+[submodule "src/FrameworkCore"]
+	path = src/FrameworkCore
+	url = https://github.com/delankallen/FrameworkCore.git
