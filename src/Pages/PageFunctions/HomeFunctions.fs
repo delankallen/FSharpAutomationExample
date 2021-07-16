@@ -8,7 +8,8 @@ open Framework.Sync
 open Framework.CanopyExtensions
 
 module HomeFunctions =
-    let eleFunctions = "Functions Here"
+    open HomeMaps
+    let getHomeHeading browser = read homeHeading browser
 
     //Example: 
     // let enterTaskText browser txt = write bodyTxt txt browser
