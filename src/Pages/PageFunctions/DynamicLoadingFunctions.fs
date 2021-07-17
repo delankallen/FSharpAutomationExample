@@ -12,6 +12,3 @@ module DynamicLoadingFunctions =
     let startLoad browser = 
         syncClick browser startBtn finishTxt
         |> fun finTxt -> read finTxt browser
-
-    //Example: 
-    // let enterTaskText browser txt = write bodyTxt txt browser

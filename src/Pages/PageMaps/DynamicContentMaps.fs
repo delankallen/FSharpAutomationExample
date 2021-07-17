@@ -9,6 +9,3 @@ module DynamicContentMaps =
 
     let contentImg = select "img" |> from contentRows
     let contentTxt = select "div" |> where (NodeIndex 2) |> from contentRows
-
-    //Example: 
-    //let newTaskBtn = select "button" |> where (Class "btn-primary") |> from topBtnDiv

@@ -2,9 +2,6 @@ namespace Tests
 
 open Xunit
 
-open canopy
-open canopy.parallell.functions
-
 open Pages.Common
 open Pages.HomeFunctions
 
@@ -13,10 +10,10 @@ open Pages.BrokenImagesFunctions
 open Pages.DynamicLoadingFunctions
 open Pages.IframeEditorFunctions
 
-module ``Dynamic Content Tests`` =
+module ``Welcome To The Internet Tests`` =
 
     [<Fact>]
-    let ``My test`` () =
+    let ``Home Page Test`` () =
         let expectedHeading = "Welcome to the-internet"
         use browser = getBrowser None //None uses the default Browser Configuration
         goToPage browser "" //empty string for home page

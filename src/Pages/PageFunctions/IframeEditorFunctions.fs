@@ -15,7 +15,3 @@ module IframeEditorFunctions =
         let actualTxt = read editorTxtArea browser
         switchToParentFrame browser
         actualTxt
-
-
-    //Example: 
-    // let enterTaskText browser txt = write bodyTxt txt browser

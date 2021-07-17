@@ -18,7 +18,4 @@ module BrokenImagesFunctions =
         |> List.filter (fun (_, success) -> success = false )
         |> List.fold (fun acc (imgSrc, _) -> acc + $"\nImgSrc: {imgSrc}, Failed" ) ""
 
-    //Example: 
-    // let enterTaskText browser txt = write bodyTxt txt browser
-
 
