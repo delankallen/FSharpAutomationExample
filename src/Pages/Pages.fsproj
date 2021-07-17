@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="GetRequest.fs" />
+    <Compile Include="./PageMaps/HomeMaps.fs" />
+    <Compile Include="./PageMaps/DynamicContentMaps.fs" />
+    <Compile Include="./PageMaps/BrokenImagesMaps.fs" />
     <Compile Include="./PageMaps/HomeMaps.fs" />
     <Compile Include="./PageFunctions/HomeFunctions.fs" />
-    <Compile Include="Library.fs" />
+    <Compile Include="./PageFunctions/DynamicContentFunctions.fs" />
+    <Compile Include="./PageFunctions/BrokenImagesFunctions.fs" />
+    <Compile Include="Common.fs" />
   </ItemGroup>
 
     <ItemGroup>
