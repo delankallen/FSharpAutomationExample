@@ -10,7 +10,6 @@ module GetRequest =
         getRequest queries url
         |> fun (x, y) -> (x, Json.deserialize<string> y)
 
-
     let verifyImg url =
         getRequest [] url
         |> fun (x, y) -> 

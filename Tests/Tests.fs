@@ -10,6 +10,8 @@ open Pages.HomeFunctions
 
 open Pages.DynamicContentFunctions
 open Pages.BrokenImagesFunctions
+open Pages.DynamicLoadingFunctions
+open Pages.IframeEditorFunctions
 
 module ``Dynamic Content Tests`` =
 
@@ -21,12 +23,12 @@ module ``Dynamic Content Tests`` =
 
         let actualHeading = getHomeHeading browser
         Assert.True((actualHeading = expectedHeading), $"Expected: {expectedHeading}, Actual: {actualHeading}")
-    
+
     [<Fact>]
     let ``Images load properly`` () =
         use browser = getBrowser None //None uses the default Browser Configuration
         goToPage browser "dynamic_content"
-        
+
         verifyContentImg browser
         |> fun x -> Assert.True(x |> String.isEmpty, x)
 
@@ -37,3 +39,24 @@ module ``Dynamic Content Tests`` =
 
         verifyBrokenImgs browser
         |> fun x -> Assert.True(x |> String.isEmpty, x)
+
+    [<Theory>]
+    [<InlineData("1")>]
+    [<InlineData("2")>]
+    let ``Dynamically Loaded Page Elements`` (exampleUrl: string) =
+        let expectedText = "Hello World!"
+        use browser = getBrowser None
+        goToPage browser $"dynamic_loading/{exampleUrl}"
+
+        startLoad browser
+        |> fun finTxt -> 
+            Assert.True((finTxt = expectedText), $"Expected: {expectedText}, Actual: {finTxt}")
+
+    [<Fact>]
+    let ``An iFrame containing the TinyMCE WYSIWYG Editor`` () =
+        let expectedTxt = "Hello, this is a WYSIWYG!"
+        use browser = getBrowser None
+        goToPage browser "iframe"
+
+        editTxtArea browser expectedTxt
+        |> fun actualTxt -> Assert.True((actualTxt = expectedTxt), $"Expected: {expectedTxt}, Acutal: {actualTxt}")
