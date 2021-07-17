@@ -13,28 +13,37 @@ You will need:
 Within VSCode you Will need the [Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) extension.
 This handles the F# intellisense and other QOL features.
 
+Note: FrameworkCore is a submodule. 
+If you get an error about `src\FrameworkCore\Framework.fsproj` not being found run this at the run root directory: 
+
+    git submodule init
+    git submodule update
+    
+This will clone the framework submodule.
+
 After cloning the repository navigate to the root of the project and run:
 
     dotnet build
-
 
 # Running Tests
 
 Tests are ran with the dotnet cli. While in the directory 
 
-```dotnet test```
+    dotnet test
 
 Will run all the tests in the directory.
 
-`dotnet test --filter "{Name of test}"`
+    dotnet test --filter "{Name of test}"
 
 This will try to match all the test names.
 
-`dotnet test --filter "Dynamically Loaded Page Elements"`
+    dotnet test --filter "Dynamically Loaded Page Elements"
 
 Would run the "Dynamically Loaded Page Elements" test
 
-`dotnet test --filter "Images"` would run any test with a name containing Images, i.e. "Test for broken images" and "Images load properly"
+    dotnet test --filter "Images"
+
+This would run any test with a name containing Images, i.e. "Test for broken images" and "Images load properly"
 
 More information on [dotnet test](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
 
