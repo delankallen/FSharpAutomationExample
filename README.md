@@ -104,7 +104,7 @@ The structure of Pages should model the site being automated.
 The sample site contains a single page full of links to other pages.
 Each page has a Maps and a Functions file.
 
-More detail on [Pages](./docs/pages.md)
+More detail on [Pages](./docs/Pages.md)
 
 ## Tests
 
