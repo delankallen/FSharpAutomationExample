@@ -9,7 +9,7 @@ To run the tests you will need [.Net Core 5](https://dotnet.microsoft.com/downlo
 The tests are configured to run [Chrome](https://www.google.com/chrome/), but can be configured for Firefox or Edge.
 This is configured in `siteConfig: BrowserConfig` in `/Pages/Common.fs`.
 
-For writing and debugging tests prefer [Visual Studio Code](https://code.visualstudio.com/) with the [Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) extension.
+For writing and debugging tests I prefer [Visual Studio Code](https://code.visualstudio.com/) with the [Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) extension.
 This handles the F# intellisense and step through debugging.
 
 After cloning the repository navigate to the root of the project and run:
