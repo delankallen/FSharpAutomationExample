@@ -4,14 +4,17 @@ Everything is written in F# using the canopy library as a wrapper around the C# 
 
 ## Getting setup 
 
-You will need:
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [.Net Core 5](https://dotnet.microsoft.com/download)
-- [Powershell Core](https://github.com/PowerShell/PowerShell/releases/tag/v7.0.4)
-- [Chrome](https://www.google.com/chrome/)
+To run the tests you will need [.Net Core 5](https://dotnet.microsoft.com/download). 
 
-Within VSCode you Will need the [Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) extension.
-This handles the F# intellisense and other QOL features.
+The tests are configured to run [Chrome](https://www.google.com/chrome/), but can be configured for Firefox or Edge.
+This is configured in `siteConfig: BrowserConfig` in `/Pages/Common.fs`.
+
+For writing and debugging tests prefer [Visual Studio Code](https://code.visualstudio.com/) with the [Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) extension.
+This handles the F# intellisense and step through debugging.
+
+After cloning the repository navigate to the root of the project and run:
+
+    dotnet build
 
 Note: FrameworkCore is a submodule. 
 If you get an error about `src\FrameworkCore\Framework.fsproj` not being found run this at the run root directory: 
@@ -21,13 +24,9 @@ If you get an error about `src\FrameworkCore\Framework.fsproj` not being found r
     
 This will clone the framework submodule.
 
-After cloning the repository navigate to the root of the project and run:
-
-    dotnet build
-
 # Running Tests
 
-Tests are ran with the dotnet cli. While in the directory 
+Tests are ran with the dotnet cli. While in the root directory 
 
     dotnet test
 
