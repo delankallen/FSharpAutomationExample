@@ -19,7 +19,7 @@ module Common =
         | None -> onNone
         | Some e -> e
 
-    let getBrowser (Default siteConfig altConfig)= setupBrowser altConfig
+    let getBrowser (Default siteConfig altConfig) = setupBrowser altConfig
 
     let goToPage browser pageUrl =
         url $"{siteConfig.home}{pageUrl}" browser

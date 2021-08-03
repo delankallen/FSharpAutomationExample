@@ -15,7 +15,7 @@ module BrokenImagesFunctions =
     let verifyBrokenImgs browser =
         elements brokenImgs browser
         |> List.map (fun img -> img.GetAttribute("src") |> fun x -> (x, verifyImg x))
-        |> List.filter (fun (_, success) -> success = false )
+        |> List.filter (fun (_, success) -> not success )
         |> List.fold (fun acc (imgSrc, _) -> acc + $"\nImgSrc: {imgSrc}, Failed" ) ""
 
 

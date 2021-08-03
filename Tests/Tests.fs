@@ -45,7 +45,7 @@ module ``Welcome To The Internet Tests`` =
         use browser = getBrowser None
         goToPage browser $"dynamic_loading/{exampleUrl}"
 
-        startLoad browser
+        startLoadAlt browser
         |> fun finTxt -> 
             Assert.True((finTxt = expectedText), $"Expected: {expectedText}, Actual: {finTxt}")
 
