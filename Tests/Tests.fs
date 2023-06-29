@@ -57,3 +57,15 @@ module ``Welcome To The Internet Tests`` =
 
         editTxtArea browser expectedTxt
         |> fun actualTxt -> Assert.True((actualTxt = expectedTxt), $"Expected: {expectedTxt}, Acutal: {actualTxt}")
+
+    [<Fact>]
+    let ``Login Form Test`` () =
+        let username = "tomsmith"
+        let pass = "SuperSecretPassword!"
+        use browser = getBrowser None
+
+        goToPage browser "login"
+
+        printfn $"wat{System.AppContext.BaseDirectory}"
+
+        // login browser username password
